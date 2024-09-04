@@ -25,7 +25,7 @@ function useLocalStorage(itemName, initialValue) {
 }
 function App() {
   
-  const [todos, setTodos] = useLocalStorage('Todo_v1', []);
+  const [todos, saveTodos] = useLocalStorage('Todo_v1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   // counter
