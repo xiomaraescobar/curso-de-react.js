@@ -9,3 +9,7 @@
 .TodoCounter span {
     font-weight: bold;
 }
+
+.todoCounter--completed {
+    color: green;
+}
