@@ -12,21 +12,28 @@ const defaultTodos = [
   { text: 'cortar cabello', completed: false },
 ];
 function App() {
-  const [todos, setTodos ] = React.useState(defaultTodos);
+  const [todos, setTodos] = React.useState(defaultTodos);
   const [searchValue, setSearchValue] = React.useState('');
 
   // counter
   // aca se le asigna a completedTodos, la cantidad ya completados.
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
-  
+
+  // search
+  const searchedTodos = todos.filter(
+    (todo) => {
+      const todoText = todo.text.toLowerCase();
+      const todoTextSearch = searchValue.toLowerCase();
+      return todoText.includes(todoTextSearch);
+    });
   return (
     <>
       <TodoCounter completed={completedTodos} total={totalTodos} />
-      <TodoSearch searchValue = {searchValue} setSearchValue = {setSearchValue} />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
-        {defaultTodos.map(todo => (
+        {searchedTodos.map(todo => (
           <TodoItem
             key={todo.text}
             text={todo.text}
