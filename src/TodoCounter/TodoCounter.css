@@ -13,3 +13,7 @@
 .todoCounter--completed {
     color: rgb(21, 255, 0);
 }
+
+.TodoCounter--loading {
+    opacity: 25%;
+}
