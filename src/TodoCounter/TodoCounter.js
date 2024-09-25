@@ -11,7 +11,7 @@ function TodoCounter({completedTodos, totalTodos, loading}) {
         : 
         totalTodos === completedTodos ?
         <h1 className='TodoCounter todoCounter--completed'>
-            Felicitaciones, Has completado todos los TODOs.
+            Felicitaciones, Has completado todos los TODOs vuelve a crear otro.
         </h1>
         :
         <h1 className={`TodoCounter ${!!loading && "TodoCounter--loading"}`}>
