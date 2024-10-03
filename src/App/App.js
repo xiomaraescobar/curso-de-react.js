@@ -15,21 +15,25 @@ import {ChangeAlert} from '../ChangeAlert'
 
 
 function App() {
+
+  const {states, updaterStates} = useTodos()
   const {
     loading,
     error,
     searchedTodos,
-    completeTodo,
-    deleteTodo,
     openModal,
-    setOpenModal,
-    addTodo,
     searchValue, 
-    setSearchValue,
     completedTodos,
     totalTodos,
+  } = states;
+  const {
+    completeTodo,
+    deleteTodo,
+    setOpenModal,
+    addTodo,
+    setSearchValue,
     sincronizeTodos
-  } = useTodos()
+  } = updaterStates;
   return (
     <>
       <TodoHeader loading={loading}>
